@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --fg: #e6e6e6;
+      --muted: #a9b0bc;
+      --accent: #228be6;
+      --card: #141822;
+      --border: #222838;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 16px 92px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    p { margin: 12px 0; color: var(--fg); }
+    ul { margin: 12px 0 12px 24px; padding: 0; }
+    li { margin: 6px 0; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 18px 0;
+    }
+    .close-bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: rgba(15,17,21,0.75);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+    }
+    .btn {
+      width: 100%;
+      display: inline-block;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>FAQ</h1>
+    <p><!DOCTYPE html> <html> <head> <meta charset="UTF-8" /> <title>FAQ</title> <style> body { background-color: #121212; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.5; }</p>
+<p>h1, h2 { color: #ffffff; margin-top: 24px; }</p>
+<p>p { margin-bottom: 16px; }</p>
+<p>.close-button { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #1e88e5; color: white; border: none; padding: 16px; font-size: 16px; cursor: pointer; } </style> </head> <body></p>
+<p><!-- ========================== СЮДА ВСТАВЛЯЕШЬ ТЕКСТ FAQ =========================== --></p>
+<p><h1>FAQ</h1> <p>В нашем чате работают модераторы и новый штурман-бот. Они помогут избежать дорогих ошибок, освоиться в доставке и набраться опыта не только в езде.</p>
+<p>Пока только начальный этап, бота я буду пилить потихоньку, параллельно изучая новые инструменты. Надеюсь, что работа не встанет и принесёт Вам пользу.</p>
+<p>В ответ на нововведения и открытый доступ к знаниям очень рассчитываю увидеть от всех участников чата:</p>
+<ul>
+<li>рост культуры общения</li>
+<li>взаимную поддержку</li>
+<li>информационную надёжность</li>
+</ul>
+<p>(Нам не нужны повторения инцидента, как с Серёгой)</p>
+<p>Со временем здесь появится:</p>
+<ul>
+<li>список модераторов и их роли</li>
+<li>правила данной закрытой группы</li>
+<li>полный список команд бота</li>
+<li>пояснение функционала</li>
+</ul>
+<p>ТК</p>
+<hr>
+<p>Тестовые команды (пока без видимого эффекта):</p>
+<p>!штурман  /  !hc — вызвать бота !дпс / !дтп / !скип / !заряд — метки для миникарты</p>
+<hr>
+<p>Ни гвоздя, ни жезла на дорогах! </p></p>
+<p><!-- ========================== --></p>
+<p><button class="close-button" onclick="closeAndSendMain()">Закрыть</button></p>
+<p><script> function closeAndSendMain() { if (window.Telegram && Telegram.WebApp) { Telegram.WebApp.sendData("main"); // <-- вот сюда уходит команда "main" Telegram.WebApp.close(); } else { alert("WebApp API недоступен"); } } </script></p>
+<p></body> </html></p>
+  </div>
+
+  <div class="close-bar">
+    <button class="btn" onclick="closeAndSendMain()">Закрыть</button>
+  </div>
+
+  <script>
+    (function init() {
+      if (window.Telegram && Telegram.WebApp) {
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+      }
+    })();
+
+    function closeAndSendMain() {
+      try {
+        if (window.Telegram && Telegram.WebApp) {
+          Telegram.WebApp.sendData("main");
+          Telegram.WebApp.close();
+          return;
+        }
+      } catch (e) {}
+      alert("Закрыть: отправили 'main' (локальный предпросмотр).");
+    }
+  </script>
+</body>
+</html>
